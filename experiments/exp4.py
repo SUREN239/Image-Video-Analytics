@@ -164,7 +164,7 @@ def create_sample_images():
     cv2.rectangle(template, (50, 50), (250, 250), (255, 0, 0), -1)
     # Draw red circle
     cv2.circle(template, (150, 150), 50, (0, 0, 255), -1)
-    cv2.imwrite('../experiment-results/template.jpg', template)
+    cv2.imwrite('../data-sets/template.jpg', template)
 
     # Create test image with multiple objects including the template pattern
     test_image = np.ones((600, 800, 3), dtype=np.uint8) * 255  # White background
@@ -185,7 +185,7 @@ def create_sample_images():
     noise = np.random.normal(0, 5, test_image.shape).astype(np.uint8)
     test_image = cv2.add(test_image, noise)
 
-    cv2.imwrite('../experiment-results/test_image.jpg', test_image)
+    cv2.imwrite('../data-sets/test_image.jpg', test_image)
 
     return template, test_image
 
